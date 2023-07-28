@@ -1,0 +1,386 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+ *, *:before, *:after {
+	 box-sizing: border-box;
+}
+body {
+	background-color: #434651;
+	font: 14px/20px "Lato", Arial, sans-serif;
+	padding:0;
+	margin: 0;
+	color: white;
+}
+.container {
+	 margin: 0 auto;
+	 width: 600px;
+	 height: 100vh;
+	 display: flex;
+	 align-items: center;
+	 background: #444753;
+	 border-radius: 5px;
+}
+
+ .chat {
+	width: 100%;
+	float: left;
+	background: #f2f5f8;
+	border-radius: 5px;
+	color: #434651;
+}
+ .chat .chat-header {
+	 padding: 20px;
+	 border-bottom: 2px solid white;
+}
+ .chat .chat-header img {
+	 float: left;
+}
+ .chat .chat-header .chat-about {
+	 float: left;
+	 padding-left: 10px;
+	 margin-top: 6px;
+}
+ .chat .chat-header .chat-with {
+	 font-weight: bold;
+	 font-size: 16px;
+}
+ .chat .chat-header .chat-num-messages {
+	 color: #92959e;
+}
+ .chat .chat-header .fa-star {
+	 float: right;
+	 color: #d8dadf;
+	 font-size: 20px;
+	 margin-top: 12px;
+}
+ .chat .chat-history {
+	 padding: 30px 30px 20px;
+	 border-bottom: 2px solid white;
+	 overflow-y: scroll;
+	height: 400px;
+}
+ .chat .chat-history .message-data {
+	 margin-bottom: 15px;
+}
+ .chat .chat-history .message-data-time {
+	 color: #a8aab1;
+	 padding-left: 6px;
+}
+ .chat .chat-history .message {
+	 color: white;
+	 padding: 18px 20px;
+	 line-height: 26px;
+	 font-size: 16px;
+	 border-radius: 7px;
+	 max-width: 90%;
+	 width: max-content;
+	 position: relative;
+}
+ .chat .chat-history .message:after {
+	 bottom: 100%;
+	 left: 27px;
+	 border: solid transparent;
+	 content: " ";
+	 height: 0;
+	 width: 0;
+	 position: absolute;
+	 pointer-events: none;
+	 border-bottom-color: #86bb71;
+	 border-width: 10px;
+	 margin-left: -10px;
+}
+ .chat .chat-history .my-message {
+	 background: #86bb71;
+}
+ .chat .chat-history .other-message {
+	 background: #94c2ed;
+}
+ .chat .chat-history .other-message:after {
+	 border-bottom-color: #94c2ed;
+	 left: unset;
+	 right: 15px;
+}
+ .chat .chat-message {
+	 padding: 30px;
+}
+ .chat .chat-message textarea {
+	 width: 100%;
+	 border: none;
+	 padding: 10px 20px;
+	 font: 14px/22px "Lato", Arial, sans-serif;
+	 margin-bottom: 10px;
+	 border-radius: 5px;
+	 resize: none;
+}
+ .chat .chat-message .fa-file-o, .chat .chat-message .fa-file-image-o {
+	 font-size: 16px;
+	 color: gray;
+	 cursor: pointer;
+}
+ .chat .chat-message button {
+	 float: right;
+	 color: #94c2ed;
+	 font-size: 16px;
+	 text-transform: uppercase;
+	 border: none;
+	 cursor: pointer;
+	 font-weight: bold;
+	 background: #f2f5f8;
+}
+ .chat .chat-message button:hover {
+	 color: #75b1e8;
+}
+ .online, .offline, .me {
+	 margin-right: 3px;
+	 font-size: 10px;
+}
+ .online {
+	 color: #86bb71;
+}
+ .offline {
+	 color: #e38968;
+}
+ .me {
+	 color: #94c2ed;
+}
+ .align-left {
+	 text-align: left;
+}
+ .align-right {
+	 text-align: right;
+}
+ .float-right {
+	 float: right;
+}
+ .clearfix:after {
+	 visibility: hidden;
+	 display: block;
+	 font-size: 0;
+	 content: " ";
+	 clear: both;
+	 height: 0;
+}
+ 
+
+.mainDiv{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.mainDiv form{
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	height: 200px;
+	align-items: center;
+	gap: 20px;
+}
+
+.mainDiv form input{
+	width: 100%;
+	height: 35px;
+	border: none;
+	outline: none;
+	box-sizing: border-box;
+	padding-left: 15px;
+	font-size: 1rem;
+	background-color: #d9ebfb;
+}
+
+.mainDiv form button{
+	padding: 11px 25px;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	background-color: #86bb71;
+	color: white;
+	cursor: pointer;
+	letter-spacing: 0.4px;
+}
+
+
+.chatsMainDiv{
+	width: 100%;
+	height: 100vh;
+	flex-direction: column;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.divCreateAndChatLists{
+	width: 500px;
+	max-height: 80vh;
+	min-height: 20vh;
+	display: flex;
+	flex-direction: column;
+	padding: 30px;
+	align-items: center;
+	box-sizing: border-box;
+	background-color: #496ae2;
+}
+
+.divCreate{
+	width: 100%;
+	height: 150px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.divCreate form{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.divCreate form input{
+	width: 60%;
+	height: 35px;
+	border: none;
+	outline: none;
+	box-sizing: border-box;
+	padding-left: 15px;
+	font-size: 1rem;
+	background-color: #d9ebfb;
+	margin-bottom: 20px;
+}
+
+.divCreate form button{
+	padding: 10px 20px;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	background-color: #86bb71;
+	color: white;
+	cursor: pointer;
+	letter-spacing: 0.5px;
+}
+
+.divChats{
+	width: 100%;
+	min-height: 50px;
+	max-height: 75%;
+	overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.divChatItems{
+	width: 99%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 30px;
+}
+.divChatItems .chatItem{
+	width: 100%;
+	height: 100px;
+	background-color: #163c5d;
+	box-sizing: border-box;
+	padding: 20px;
+}
+
+.chatItemHeader{
+	width: 100%;
+	height: 20px;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+.chatItemHeader h1{
+	width: max-content;
+	cursor: pointer;
+	font-size: 1.5rem;
+	color: whitesmoke;
+	padding: 0;
+	margin: 0;
+}
+
+
+
+::-webkit-scrollbar {
+width: 5px;
+}
+  
+::-webkit-scrollbar-track {
+background: unset;
+}
+  
+::-webkit-scrollbar-thumb {
+background: #21f0df;
+border-radius: 5px;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+	background: #18beb0;
+}
+
+
+.loaderDiv{
+	display: flex;
+	align-items: center;
+}
+
+.lds-ellipsis {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
+  }
+  .lds-ellipsis div {
+	position: absolute;
+	top: 33px;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	background: #fff;
+	animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+	left: 8px;
+	animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+	left: 8px;
+	animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+	left: 32px;
+	animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+	left: 56px;
+	animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+	0% {
+	  transform: scale(0);
+	}
+	100% {
+	  transform: scale(1);
+	}
+  }
+  @keyframes lds-ellipsis3 {
+	0% {
+	  transform: scale(1);
+	}
+	100% {
+	  transform: scale(0);
+	}
+  }
+  @keyframes lds-ellipsis2 {
+	0% {
+	  transform: translate(0, 0);
+	}
+	100% {
+	  transform: translate(24px, 0);
+	}
+  }
